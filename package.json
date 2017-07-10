@@ -32,7 +32,9 @@
     "debug": "^2.6.8",
     "express": "^4.15.3",
     "express-handlebars": "3.0.0",
+    "method-override": "^2.3.9",
     "mysql": "^2.13.0",
+    "path": "^0.12.7",
     "run-parallel": "^1.1.6",
     "run-series": "^1.1.4",
     "sequelize": "4.3.0"
