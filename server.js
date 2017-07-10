@@ -5,11 +5,6 @@ var bodyParser = require("body-parser");
 var path = require("path");
 var methodOverride = require("method-override");
 
-// Include methods to configure routes
-// Override with POST having ?_method=DELETE
-app.use(methodOverride("_method"));
-var exphbs = require("express-handlebars");
-
 //var htmlRoutes = require('./routing/htmlRoutes');
 //var apiRoutes = require('./routing/apiRoutes');
 //
@@ -19,6 +14,11 @@ var defaultPath = path.join(__dirname, '/');
 // Sets up the Express App
 // =============================================================
 var app = express();
+
+// Include methods to configure routes
+// Override with POST having ?_method=DELETE
+app.use(methodOverride("_method"));
+var exphbs = require("express-handlebars");
 
 // Heroku will set the port via an environment variable
 app.set('port', (process.env.PORT || 5000));
