@@ -1,17 +1,43 @@
 {
-  "name": "project2",
+  "name": "climatenow",
   "version": "1.0.0",
-  "description": "",
-  "main": "connectionZub.js",
+  "description": "ClimateNow!! exposes the terrible truths of climate change and helps concerned citizens of the world come together to create political change. ClimateNow!! is a full-stack web application built on Node.js, Express.js, and MySQL.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saresende/groupproject2.git"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "Javascript",
+    "Fullstack",
+    "Web",
+    "Sequelize",
+    "mysql"
+  ],
+  "author": "Sam Saresende",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saresende/groupproject2/issues"
+  },
+  "homepage": "https://github.com/saresende/groupproject2#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "climate-data-crawler": "2.1.8",
+    "commander": "^2.11.0",
+    "debug": "^2.6.8",
     "express": "^4.15.3",
-    "express-handlebars": "^3.0.0",
-    "mysql": "^2.13.0"
+    "express-handlebars": "3.0.0",
+    "method-override": "^2.3.9",
+    "mysql": "^2.13.0",
+    "path": "^0.12.7",
+    "run-parallel": "^1.1.6",
+    "run-series": "^1.1.4",
+    "sequelize": "4.3.0"
   }
 }
