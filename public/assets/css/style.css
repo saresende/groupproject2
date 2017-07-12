@@ -1,0 +1,47 @@
+
+		body{
+			background-color: wheat;
+		}
+		.navbar{
+			margin-top: 10px;
+		}
+		.nav li{
+			margin-right: 40px;
+			
+		}
+		a{	
+			color: red;
+		}
+		#imgName{
+			float: left;
+			margin-right: 30px;
+		}
+		p{
+			overflow: hidden;
+			margin-top: -25px;
+			margin-left: 40px;
+		}
+		button{
+			margin-top: 15px;
+		}
+		#btnResearch button{
+			width: 250px;
+		}
+
+		input{
+			width: 250px;
+		}
+		.navbar{
+			background-color: #FAEBD7;
+			color: blue;
+			font-size: 1.5em;
+		}
+		.nav li{
+			font-size: 15px;
+		}
+		#video{
+			width: 850px;
+			height: 400px;
+			margin-top: -15px;
+		}
+
