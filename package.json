@@ -1,4 +1,5 @@
 {
+
   "name": "climatenow",
   "version": "1.0.0",
   "description": "ClimateNow!! exposes the terrible truths of climate change and helps concerned citizens of the world come together to create political change. ClimateNow!! is a full-stack web application built on Node.js, Express.js, and MySQL.",
