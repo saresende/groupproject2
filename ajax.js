@@ -19,14 +19,14 @@ var newsAPIArticle = request({
   if(err){
   	throw err;
   };
-  for(var i = 0, i < keyWords.length, i++){//Look into the match() method to get matching key words.
-  		for(var j = 0, j < body.length, j++){
-		  	if(body[j].description !== keyWords[i]){
-		  		delete body[j];//This should delete articles which do not contain the climate-change-relevant key words.
-	  		};
-	  	};
-  	};
-  };
+  // for(var i = 0, i < keyWords.length, i++){//Look into the match() method to get matching key words.
+  // 		for(var j = 0, j < body.length, j++){
+		//   	if(body[j].description !== keyWords[i]){
+		//   		delete body[j];//This should delete articles which do not contain the climate-change-relevant key words.
+	 //  		};
+	 //  	};
+  // 	};
+  // };
   
   console.log(res);
 });
@@ -41,5 +41,5 @@ var newsAPISource = request({
 	parse:true
 }, function(req, res, body){
 
-};)
-module.exports = newsAPI;//Export to the server.js
+});
+//module.exports = newsAPI;//Export to the server.js

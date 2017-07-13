@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX put to the Test</title>
+	<!--<script src = "ajax.js">	
+	</script>-->
+	<script src = "https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script> $.ajax({
+	 url: 'https://newsapi.org/v1/articles',
+  method: 'GET',
+  data: {
+    source:'national-geographic',
+    sortBy: 'top',
+    apiKey: '561d192664c14d878f90660ffafa201c',
+	}
+}).done(function(response) {
+	console.log(response);
+});
+	$.ajax({
+	 url: 'https://newsapi.org/v1/articles',
+  method: 'GET',
+  data: {
+    source:'bbc-news',
+    sortBy: 'top',
+    apiKey: '561d192664c14d878f90660ffafa201c',
+	}
+}).done(function(response) {
+	console.log(response);
+});
+	</script>
+</head>
+<body>
+
+</body>
+</html>
