@@ -1,5 +1,4 @@
 {
-
   "name": "climatenow",
   "version": "1.0.0",
   "description": "ClimateNow!! exposes the terrible truths of climate change and helps concerned citizens of the world come together to create political change. ClimateNow!! is a full-stack web application built on Node.js, Express.js, and MySQL.",
@@ -28,6 +27,7 @@
   },
   "homepage": "https://github.com/saresende/groupproject2#readme",
   "dependencies": {
+    "ajax-request": "^1.2.3",
     "body-parser": "^1.17.2",
     "climate-data-crawler": "2.1.8",
     "commander": "^2.11.0",
@@ -37,6 +37,7 @@
     "method-override": "^2.3.9",
     "mysql": "^2.13.0",
     "path": "^0.12.7",
+    "request": "^2.81.0",
     "run-parallel": "^1.1.6",
     "run-series": "^1.1.4",
     "sequelize": "4.3.0"
