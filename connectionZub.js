@@ -42,11 +42,29 @@ app.get("/", function(req, res) {
 
 });
 //========================================
-app.post("/signin", function(req, res) {
+
+
+// Express.js Endpoint "/signin"
+// Representing an HTTP POST request
+app.post("/signin", function(request, response) {
+
+
+    // Access our model by calling some javascript function on an object
+   // climate.getAllData( function ourCallback(data) {
+
+      // When the model finally executes the SQL query we cannot see here,
+      // Call express handlebars middleware
+     // response.render("project-Signin", { name : data } );
+
+    //});
+
     //res.render("project-research", { dataHtml: data });
-   // res.render("project-Signin");
-     res.render("project-Signin");
+   response.render("project-Signin");
+    // res.render("project-Signin", { name : data });
+  
   });
+
+
 //========================================
 app.post("/signinDone", function(req, res) {
     //res.render("project-research", { dataHtml: data });
