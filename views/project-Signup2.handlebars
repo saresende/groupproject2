@@ -1,4 +1,5 @@
 
+
 <!-- =====================================================-->
 
 <div class="row">
@@ -104,7 +105,7 @@
 
 
   <!-- =============================================================================================== -->  
-<form action="/event" method="POST">
+
 
 <div id="friendModal" class="modal">
             <div class="modal-dialog">
@@ -112,8 +113,9 @@
 
       <!-- ============================================== -->      
             <div class="modal-body text-center ">
-
-
+      <!-- ============================================== --> 
+      <!-- ============================================== --> 
+<form action="/signin" method="POST">
   
   <div class="col-md-2">
     
@@ -122,24 +124,19 @@
 
     <div class="col-md-6">
           <br>
-          Name of Organizer:
+          Name:
               <input type="text" name="name1" value="">
               <br><br>
-          Media:
+          Location:
               <input type="text" name="name2" value="">
               <br><br>
-          Description:     
-              <input type="text" name="name3" value="">
-        
-              <br><br>
-         
-          <div class="input-group date" data-provide="datepicker">
-          Date:
-               <input type="text" name="name4" value="" id="datepicker"> 
-          </div>
+          Password:     
+              <input type="text" name="name3" value="">   
               <br><br> 
-           Location:
-              <input type="text" name="name5" value="">   
+            <div class="input-group date" data-provide="datepicker">
+               Date:
+               <input type="text" name="id" value="" id="datepicker"> 
+          </div>
               <br><br> 
               <button type="submit" class="btn btn-success" >SUBMIT</button>     
             <br><br>      
@@ -186,14 +183,7 @@
   </div>
 
 
-      <!-- ============================================== -->
 
-  <script>
-  $(function() {
-    $( "#datepicker" ).datepicker();
-  });
-  </script>
-      <!-- ============================================== --> 
 
 </form>
 
@@ -204,13 +194,17 @@
 -->
 
 
-
+     <script>
+         $(function() {
+            $( "#datepicker" ).datepicker();
+         });
+      </script>
       <!-- ============================================== --> 
       <!-- ============================================== -->       
             </div>
 
           <!-- ============================================== --> 
-         <br>   <div class="modal-footer ">
+            <div class="modal-footer ">
                 <button type="button " class="modal-action modal-close " data-dismiss="modal ">Close</button>
             </div>
         </div>
