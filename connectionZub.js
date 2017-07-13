@@ -92,6 +92,46 @@ app.post("/allPlayers", function(req, res) {
   });
 });
 //========================================
+//==========================================
+
+app.post("/delete", function(req, res) {
+  connection.query("DELETE FROM climate WHERE Name=? " , [req.body.name], function(err, data) {
+    if (err) {
+      throw err;
+    }
+      });   
+  connection.query("SELECT * FROM climate ORDER BY id DESC;", function(err, data) {
+    if (err) {
+      throw err;
+    }
+    console.log('data', data);
+    res.render("delete", { list: data });
+
+  });
+});
+//=================================================================
+//=================================================================
+
+app.post("/update", function(req, res) {
+  connection.query("UPDATE climate SET Name= ? WHERE Name= ?", [req.body.name1, req.body.name2], function(err, data) {
+    if (err) {
+      throw err;
+    }
+      });   
+  connection.query("SELECT * FROM climate ;", function(err, data) {
+    if (err) {
+      throw err;
+    }
+    console.log('data', data);
+    res.render("update", { list: data });
+
+  });
+});
+//========================================
+app.listen(port, function() {
+  console.log("Listening on PORT " + port);
+});
+
 app.listen(port, function() {
   console.log("Listening on PORT " + port);
 });
