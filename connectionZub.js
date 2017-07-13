@@ -4,7 +4,7 @@ var mysql = require("mysql");
 var exphbs = require("express-handlebars");
 
 var app = express();
-var port = 3000;
+var port = 3000; //Server runs on port 5000. Should we choose 3000 or 5000 as our app's port?
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
