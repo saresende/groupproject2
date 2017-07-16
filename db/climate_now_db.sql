@@ -19,9 +19,8 @@
 -- Current Database: `climate_now_db`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `climate_now_db` /*!40100 DEFAULT CHARACTER SET latin1 */;
-
-USE `climate_now_db`;
+-- CREATE DATABASE /*!32312 IF NOT EXISTS*/ `climate_now_db` /*!40100 DEFAULT CHARACTER SET latin1 */;
+-- USE `climate_now_db`;
 
 --
 -- Table structure for table `country_info`
