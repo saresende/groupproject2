@@ -19,15 +19,18 @@
 		p{
 			overflow: hidden;
 			margin-top: -25px;
-			margin-left: 40px;
+			
 		}
+
 		button{
 			margin-top: 15px;
 		}
 		#btnResearch button{
-			width: 250px;
+			width: 180px;
 		}
-
+		#btnResearch input{
+			width: 180px;
+		}
 		input{
 			width: 250px;
 		}
@@ -39,9 +42,17 @@
 		.nav li{
 			font-size: 15px;
 		}
+		#climateDataDisplay li{
+			font-size: 10px;
+		}
 		#video{
-			width: 850px;
+			width: auto;
 			height: 400px;
 			margin-top: -15px;
 		}
-
+		footer{
+			float: left;
+		}
+		#test{
+			margin-left: 60px;
+		}

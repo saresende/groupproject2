@@ -42,54 +42,114 @@ app.get("/", function(req, res) {
 
 });
 //========================================
-app.post("/signin", function(req, res) {
+
+
+// Express.js Endpoint "/signin"
+// Representing an HTTP POST request
+app.post("/signin", function(request, response) {
+
+
+    // Access our model by calling some javascript function on an object
+   // climate.getAllData( function ourCallback(data) {
+
+      // When the model finally executes the SQL query we cannot see here,
+      // Call express handlebars middleware
+     // response.render("project-Signin", { name : data } );
+
+    //});
+
     //res.render("project-research", { dataHtml: data });
-   // res.render("project-Signin");
-     res.render("project-Signin");
+   response.render("project-Signin");
+    // res.render("project-Signin", { name : data });
+  
+  });
+
+
+//========================================
+app.post("/zubaer", function(req, res) {
+    //res.render("project-research", { dataHtml: data });
+    res.render("project-test");
   });
 //========================================
-app.post("/signinDone", function(req, res) {
+app.post("/zubaer", function(req, res) {
     //res.render("project-research", { dataHtml: data });
-    res.render("project-research");
-  });
-//========================================
-app.post("/research", function(req, res) {
-    //res.render("project-research", { dataHtml: data });
-    res.render("project-research");
+    res.render("project-test");
   });
 //========================================
 app.post("/signup", function(req, res) {
   //  res.render("project-Signup", { dataHtml: data });
   res.render("project-Signup");
   });
-
 //========================================
-app.post("/signupDone", function(req, res) {
+app.post("/signup2", function(req, res) {
+  //  res.render("project-Signup", { dataHtml: data });
+  res.render("project-Signup2");
+  });
+//========================================
+app.post("/event", function(req, res) {
     connection.query("INSERT INTO climate (organizer, Media, description, date, location) VALUE (?????)" , [req.body.name1,req.body.name2,req.body.name3,req.body.name4,req.body.name5], function(err, data) {
     if (err) {
       throw err;
     }
       }); 
-  //  res.render("project-Signup", { dataHtml: data });
-  res.render("project-Signin");
+  //res.render("project-test", { dataHtml: data });
+  res.render("project-test");
   });
 
 
 //========================================
-/*
-app.post("/detailsPlayers", function(req, res) {
-  connection.query("SELECT Name, Nationality, Club, Age, Aggression, Reactions, Speed, Height, Weight FROM fifagame.fulldata WHERE Name='Cristiano Ronaldo';", function(err, data) {
+//========================================
+app.post("/allPlayers", function(req, res) {
+  connection.query("SELECT * FROM climate LIMIT 20;", function(err, data) {
     if (err) {
       throw err;
     }
-
     console.log('data', data);
-    res.render("playresNameDetails", { playernames1: data });
+    res.render("project-test", { list: data });
 
   });
-}); 
-*/
+});
 //========================================
+//==========================================
+
+app.post("/delete", function(req, res) {
+  connection.query("DELETE FROM climate WHERE Name=? " , [req.body.name], function(err, data) {
+    if (err) {
+      throw err;
+    }
+      });   
+  connection.query("SELECT * FROM climate ORDER BY id DESC;", function(err, data) {
+    if (err) {
+      throw err;
+    }
+    console.log('data', data);
+    res.render("delete", { list: data });
+
+  });
+});
+//=================================================================
+//=================================================================
+
+app.post("/update", function(req, res) {
+  connection.query("UPDATE climate SET Name= ? WHERE Name= ?", [req.body.name1, req.body.name2], function(err, data) {
+    if (err) {
+      throw err;
+    }
+      });   
+  connection.query("SELECT * FROM climate ;", function(err, data) {
+    if (err) {
+      throw err;
+    }
+    console.log('data', data);
+    res.render("update", { list: data });
+
+  });
+});
+//========================================
+app.listen(port, function() {
+  console.log("Listening on PORT " + port);
+});
+
 app.listen(port, function() {
   console.log("Listening on PORT " + port);
 });
