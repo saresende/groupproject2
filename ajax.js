@@ -44,11 +44,38 @@ var newsAPISource = request({
 });
 //module.exports = newsAPI;//Export to the server.js
 
-var newsBlurAPI = request({
-  url:""
-  method:"POST", 
-  data:{
+// var webHoseAPI = request({
+//   url:""
+//   method:"GET", 
+//   data:{
+//     //Basic query data
+//     q:"climate",
+//     token:"15882b37-bd74-4282-840d-a3b7e415178b",
+//     sort:"relevency",
+//     order:"desc",
+//     from:"5", //limits number of pages.
+//     format:"json",
+//     size:"10",
+//     accuracy_confidence:"high",
+//     //Up next, the filters
+//     text:"climate AND temperature",
+//     //Now the site filters
+//     site_type:"news"
+//   },
+//   parse:true
+// });
 
-  },
-  parse:true
-})
+// const webhoseio = require('webhoseio');
+
+// const client = webhoseio.config({token: '15882b37-bd74-4282-840d-a3b7e415178b'});
+// client.query('filterWebContent', {q: 'github'})
+//   .then(output => {
+//     console.log(output['posts'][0]['text']); // Print the text of the first post
+//     console.log(output['posts'][0]['published']); // Print the text of the first post publication date
+// });
+
+// // Get the next batch of posts
+// client.getNext()
+//   .then(output => {
+//     console.log(output['posts'][0]['thread']['site']); // Print the site of the first post
+//   });
