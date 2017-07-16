@@ -1,4 +1,19 @@
 
+/**
+ * Handle successful sign-ins.
+ */
+var onSuccess = function(user) {
+    console.log('Signed in as ' + user.getBasicProfile().getName());
+ };
+
+/**
+ * Handle sign-in failures.
+ */
+var onFailure = function(error) {
+    console.log(error);
+};
+
+
 gapi.load('auth2'),
     function() {
         auth2 = gapi.auth2.init({
@@ -6,6 +21,7 @@ gapi.load('auth2'),
             fetch_basic_profile: false,
             scope: 'profile'
         });
+        auth2.attachClickHandler('signin-button', {}, onSuccess, onFailure);
     };
 
 auth2.signIn().then(function() {

@@ -2,8 +2,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Climate change</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-signin-client_id" content="520273713084-3nf5h5gnn1dqmljom2n2p0onrjlhkh27.apps.googleusercontent.com">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -14,6 +16,7 @@
       <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
       <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://apis.google.com/js/plus.js?onload=init"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
 
 
@@ -23,6 +26,14 @@
 
 
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.9&appId=2469561986517847";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <div class="container">
 
 
@@ -107,4 +118,6 @@
 
 </div>
 </body>
-</html>
+<script type="text/javascript" src="assets/javascript/authenticate.js"></script>
+<script type="text/javascript" src="assets/javascript/d3.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script></html>
