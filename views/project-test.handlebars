@@ -1,0 +1,98 @@
+
+
+<!-- =====================================================-->
+
+
+<div class="row">
+  <div class="col-md-2" id="btnResearch">
+ 
+      	<form action="/barCarbon" method="POST">
+          <br> 
+            <input type="hidden" name="one" value=""><br>
+            <button type="submit" class="btn btn-primary btn-sm">carbonQuantity</button>  
+            <br><br>
+    	</form>
+      	<form action="/LineTempRaise" method="POST"> 
+      		
+            <input type="hidden" name="two" value="">
+            <button type="submit" class="btn btn-primary btn-sm">aveTempRaise</button>  
+            <br><br>
+    	</form>
+
+      	<form action="/pieChart" method="POST"> 
+      	
+            <input type="hidden" name="three" value="">
+            <button type="submit" class="btn btn-primary btn-sm">Sea level</button>  
+            <br><br>
+    	</form>
+
+    	<form action="/four" method="POST"> 
+      		
+            <input type="hidden" name="four" value="">
+            <button type="submit" class="btn btn-primary btn-sm">Other</button>  
+            <br><br>
+    	</form>
+</div>
+
+
+<!-- *************************************** -->
+
+  <div class="col-md-2" id="btnResearch">
+
+      <form action="/allPlayers" method="POST">
+        <input type="hidden" name="id" value="nameOfPlayers">
+        <button type="submit" class="btn btn-success" >All Names:</button>     
+        <br><br>
+      </form>
+
+<!-- *************************************** -->
+
+<!-- *************************************** -->
+
+<!-- *************************************** -->
+
+<!-- *************************************** -->
+      <form action="/insert" method="POST">
+        <input type="text" name="name" value="">
+        <button type="submit" class="btn btn-success" >INSERT</button>     
+        <br><br>
+      </form>
+
+<!-- *************************************** -->
+      <form action="/delete" method="POST">
+        <input type="text" name="name" value="">
+        <button type="submit" class="btn btn-success" >DELETE</button>     
+        <br><br>
+      </form>
+
+<!-- *************************************** -->
+      <form action="/update" method="POST">
+        <input type="text" name="name1" value="">
+        <input type="text" name="name2" value="">
+        <button type="submit" class="btn btn-success" >UPDATE</button>     
+        <br><br>
+      </form>
+<!-- *************************************** -->
+</div>
+<!-- *************************************** -->
+
+
+
+	<div class="col-md-8" id="test">
+	<br><br><br><br><h1>Test</h1>   
+
+<ol>
+  {{#each list}}
+    <li id="climateDataDisplay">     
+    <p>Organizer:  {{this.organizer}}</p> 
+    <p>Media:  {{this.Media}}</p>
+    <p>Description:  {{this.description}}</p> 
+    <p>Date:  {{this.date}}</p>  
+     <p>Location:  {{this.location}}</p>   
+    </li>
+  {{/each}}
+</ol>    
+	</div>
+</div>
+
+

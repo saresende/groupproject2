@@ -1,6 +1,6 @@
 
 		body{
-			background-color: wheat;
+			background-color: white;
 		}
 		.navbar{
 			margin-top: 10px;
@@ -18,30 +18,47 @@
 		}
 		p{
 			overflow: hidden;
-			margin-top: -25px;
-			margin-left: 40px;
+			margin-top: -15px;
+			color: white;
 		}
+
 		button{
 			margin-top: 15px;
 		}
-		#btnResearch button{
-			width: 250px;
 		}
-
+		#btnResearch{
+			background-color: black;
+		}
+		#btnResearch button{
+			width: 180px;
+		}
+		#btnResearch input{
+			width: 180px;
+		}
 		input{
 			width: 250px;
 		}
 		.navbar{
-			background-color: #FAEBD7;
-			color: blue;
+
 			font-size: 1.5em;
 		}
 		.nav li{
 			font-size: 15px;
 		}
+		#climateDataDisplay li{
+			font-size: 10px;
+		}
 		#video{
-			width: 850px;
-			height: 400px;
+			width: auto;
+			height: 300px;
 			margin-top: -15px;
 		}
-
+		footer{
+			float: left;
+		}
+		#test{
+			margin-left: 60px;
+		}
+		#friendModal2{
+			background-color: wheat;
+		}

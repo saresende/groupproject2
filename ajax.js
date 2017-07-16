@@ -43,3 +43,12 @@ var newsAPISource = request({
 
 });
 //module.exports = newsAPI;//Export to the server.js
+
+var newsBlurAPI = request({
+  url:""
+  method:"POST", 
+  data:{
+
+  },
+  parse:true
+})

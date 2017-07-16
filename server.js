@@ -5,10 +5,21 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 var methodOverride = require("method-override");
+var models = require("./models/model.js");
 
-//var htmlRoutes = require('./routing/htmlRoutes');
-//var apiRoutes = require('./routing/apiRoutes');
-//
+// Initialize the data models
+models.initializeModels();
+
+// Test getting data from the databse
+/*
+models.MeanSeaLevelChange.findAndCountAll().then(result => {
+    console.log("Count of returned rows: " + result.count);
+    result.rows.forEach( function(row) {
+        console.log(`${row.id}   ${row.year}   ${row.change}`);
+    });
+});
+*/
+
 // The default file path to the application
 var defaultPath = path.join(__dirname, '/');
 
@@ -41,10 +52,14 @@ app.use(bodyParser.urlencoded({extended: false}));
 //htmlRoutes.setup(defaultPath, app, data);
 //apiRoutes.setup(defaultPath, app, data);
 
+app.get("/", function(request, response) {
+    var fullUrl = request.protocol + '://' + request.get('host') + request.originalUrl;
+    response.send("Received request for URL: " + fullUrl);
+});
+
 // Finally, configure a catch all for baloney http requests
-app.all('*', function(req, res, next) {
-    // Send a permanent redirect response
-    res.redirect(301, 'https://http.cat/404');
+app.all('*', function(request, response, next) {
+    response.redirect("/");
     next();
 });
 

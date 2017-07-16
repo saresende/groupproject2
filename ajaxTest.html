@@ -5,17 +5,18 @@
 	<!--<script src = "ajax.js">	
 	</script>-->
 	<script src = "https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<script> $.ajax({
-	 url: 'https://newsapi.org/v1/articles',
-  method: 'GET',
-  data: {
-    source:'national-geographic',
-    sortBy: 'top',
-    apiKey: '561d192664c14d878f90660ffafa201c',
-	}
-}).done(function(response) {
-	console.log(response);
-});
+ 	<script> 
+//$.ajax({
+// 	 url: 'https://newsapi.org/v1/articles',
+//   method: 'GET',
+//   data: {
+//     source:'national-geographic',
+//     sortBy: 'top',
+//     apiKey: '561d192664c14d878f90660ffafa201c',
+// 	}
+// }).done(function(response) {
+// 	console.log(response);
+// });
 	$.ajax({
 	 url: 'https://newsapi.org/v1/articles',
   method: 'GET',
@@ -26,10 +27,30 @@
 	}
 }).done(function(response) {
 	console.log(response);
+	$("#article").append(response.articles[0].title);
+	console.log(response.articles[0].title);
+	$("#article").append(response.articles[0].description);
+	console.log(response.articles[0].urlToImage);
+	$("#article-pic").attr("src", response.articles[0].urlToImage);//Resize the pics to make headlines and stories more visible.
+	for(var i = 0; i < response.length; i++){
+			$("table").append($("th")).append ($("tr")).append($("td"))
+
+			//Column for images, titles, descriptions/body will be needed.
+	};
 });
+
+
+
 	</script>
+	<style>
+		#article-pic{width:25%;height:70%;}
+	</style>
 </head>
 <body>
+	<div id = "article">
+		<img id = "article-pic" src = "", alt = "article-pic">
 
+
+	</div>
 </body>
 </html>
