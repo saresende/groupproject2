@@ -40,7 +40,6 @@ connection.connect(function(err) {
 //========================================
 app.get("/", function(req, res) {
     res.render("home");
-
 });
 //========================================
 app.post("/signin", function(req, res) {
