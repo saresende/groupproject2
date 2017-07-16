@@ -22,7 +22,7 @@ app.use(methodOverride("_method"));
 var exphbs = require("express-handlebars");
 
 // Heroku will set the port via an environment variable
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 5000));
 
 // Serve static content for the app from the "public" directory
 app.use(express.static(defaultPath + "public"));
@@ -42,11 +42,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 //apiRoutes.setup(defaultPath, app, data);
 
 // Finally, configure a catch all for baloney http requests
-/*app.all('*', function(req, res, next) {
+app.all('*', function(req, res, next) {
     // Send a permanent redirect response
     res.redirect(301, 'https://http.cat/404');
     next();
-});*/
+});
 
 // Listen for http requests
 // =============================================================
