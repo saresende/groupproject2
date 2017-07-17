@@ -4,7 +4,9 @@ var mysql = require("mysql");
 var exphbs = require("express-handlebars");
 
 var app = express();
-var port = 3000;
+
+// Heroku will set the port via an environment variable
+app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -180,8 +182,9 @@ app.post("/D3Chart", function(req, res) {
 });
 });
 //========================================
-app.listen(port, function() {
-  console.log("Listening on PORT " + port);
-console.log("Database: " + connectionObject.database);
-});
+// Listen for http requests
+// =============================================================
+app.listen(app.get('port'), function() {
+    console.log('Node app is running on port', app.get('port'));
 
+});
