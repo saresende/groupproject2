@@ -1,0 +1,163 @@
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="assets/javascript/Chart.js"></script>
+
+<!-- ============================================ =========-->
+
+
+<div class="row">
+  <div class="col-md-2" id="btnResearch">
+        <form action="/barCarbon" method="POST">
+          
+      
+            <button type="submit" class="btn btn-primary btn-sm">Carbon Quantity</button>  
+            <br><br>
+      </form>
+        <form action="/LineTempRaise" method="POST"> 
+          
+            <input type="hidden" name="two" value="">
+            <button type="submit" class="btn btn-primary btn-sm">Ave TempRaise</button>  
+            <br><br>
+      </form>
+
+        <form action="/pieChart" method="POST"> 
+        
+            <input type="hidden" name="three" value="">
+            <button type="submit" class="btn btn-primary btn-sm">Pie Chart</button>  
+            <br><br>
+      </form>
+
+     <form action="/sealevel" method="POST"> 
+          
+            <input type="hidden" name="four" value="">
+            <button type="submit" class="btn btn-primary btn-sm">Sea Level</button>  
+            <br><br>
+      </form>
+
+      <form action="/D3Chart" method="POST"> 
+          
+            <input type="hidden" name="four" value="">
+            <button type="submit" class="btn btn-primary btn-sm">D3-Chart Sea Level</button>  
+            <br><br>
+      </form>
+</div>
+
+
+<!-- *************************************** -->
+
+  <div class="col-md-2" id="btnResearch2">
+      <form action="/allPlayers" method="POST">
+        <input type="hidden" name="id" value="nameOfPlayers">
+        <button type="submit" class="btn btn-success" >All Names:</button>     
+        <br><br>
+      </form>
+
+
+<!-- *************************************** -->
+      <form action="/insert" method="POST">
+        <input type="text" name="name" value="">
+        <button type="submit" class="btn btn-success" >INSERT</button>     
+        <br><br>
+      </form>
+
+<!-- *************************************** -->
+      <form action="/delete" method="POST">
+        <input type="text" name="name" value="">
+        <button type="submit" class="btn btn-success" >DELETE</button>     
+        <br><br>
+      </form>
+<!-- *************************************** -->
+      <form action="/update" method="POST">
+        <input type="text" name="name1" value="">
+        <input type="text" name="name2" value="">
+        <button type="submit" class="btn btn-success" >UPDATE</button>     
+        <br><br>
+      </form>
+<!-- *************************************** -->
+</div>
+<!-- ***************************************  -->
+
+
+
+	<div class="col-md-8" id="test">
+	
+<!-- ========================== -->
+<div id="canvasSize">
+  <canvas id="mycanvas" width="200" height="200" ></canvas>
+</div>
+ <!-- ========================== -->
+
+<!-- 
+<ol>
+
+  {{#each tempRaise}}
+    <li id="climateDataDisplay">
+    <p>This: {{this}}</p>     
+    <p>Country:  {{Country}}</p> 
+    <p>Forest:  {{[Forest Footprint]}}</p>
+    <p>Water:  {{[Fishing Water]}}</p>
+    <p>Urban Land:  {{[Urban Land]}}</p>
+    </li> 
+  {{/each}}
+</ol> 
+-->
+ <!-- ========================== -->
+
+
+<script type="text/javascript">
+    var country = [];
+    var forest = [];
+    var water = [];
+    var land = [];
+
+  {{#each tempRaise}}
+    country.push('{{Country}}');
+    forest.push({{[Forest Footprint]}});
+    water.push({{[Fishing Water]}});
+    land.push({{[Urban Land]}});
+  {{/each}}
+
+var ctx = document.getElementById("mycanvas").getContext('2d');
+var chartData = new Chart (ctx, {
+  type: 'line',
+  data: {
+    labels: country,
+    datasets: [
+    {
+      label: 'forest',
+      background: 'rgb(255, 0, 0))',
+      borderColor: "#3e95cd",
+      hoverBackgroundColor: 'rgba(234, 33, 11, 1))',
+      hoverBorderColor: 'rgba(234, 33, 11, 1))',
+      data: forest
+    },
+   
+      {
+      label: 'water',
+      background: 'rgba(200,200,200, 0.75)',
+      borderColor: "#8e5ea2",
+      hoverBackgroundColor: 'rgba(200,200,200, 1)',
+      hoverBorderColor: 'rgba(200,200,200, 1)',
+      data: water
+    },
+    {
+      label: 'land',
+      background: 'rgba(234, 33, 11, 1)',
+      borderColor: "#c45850",
+      hoverBackgroundColor: 'rgba(234, 33, 11, 1))',
+      hoverBorderColor: 'rgba(234, 33, 11, 1))',
+      data: land
+    }
+    ]
+  }
+});
+
+</script>
+
+
+  </div>
+</div>

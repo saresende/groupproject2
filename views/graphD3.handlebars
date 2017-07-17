@@ -1,0 +1,180 @@
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.10.0/d3.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"></script>
+
+<!-- ============================================ =========-->
+
+<div class="row">
+  <div class="col-md-2" id="btnResearch">
+ 
+        <form action="/barCarbon" method="POST">
+          
+      
+            <button type="submit" class="btn btn-primary btn-sm">Carbon Quantity</button>  
+            <br><br>
+      </form>
+        <form action="/LineTempRaise" method="POST"> 
+          
+            <input type="hidden" name="two" value="">
+            <button type="submit" class="btn btn-primary btn-sm">Ave TempRaise</button>  
+            <br><br>
+      </form>
+
+        <form action="/pieChart" method="POST"> 
+        
+            <input type="hidden" name="three" value="">
+            <button type="submit" class="btn btn-primary btn-sm">Pie Chart</button>  
+            <br><br>
+      </form>
+
+     <form action="/sealevel" method="POST"> 
+          
+            <input type="hidden" name="four" value="">
+            <button type="submit" class="btn btn-primary btn-sm">Sea Level</button>  
+            <br><br>
+      </form>
+
+      <form action="/D3Chart" method="POST"> 
+          
+            <input type="hidden" name="four" value="">
+            <button type="submit" class="btn btn-primary btn-sm">D3-Chart Sea Level</button>  
+            <br><br>
+      </form>
+</div>
+
+
+<!-- *************************************** -->
+
+  <div class="col-md-2" id="btnResearch2">
+
+      <form action="/allPlayers" method="POST">
+        <input type="hidden" name="id" value="nameOfPlayers">
+        <button type="submit" class="btn btn-success" >All Names:</button>     
+        <br><br>
+      </form>
+
+
+<!-- *************************************** -->
+      <form action="/insert" method="POST">
+        <input type="text" name="name" value="">
+        <button type="submit" class="btn btn-success" >INSERT</button>     
+        <br><br>
+      </form>
+
+<!-- *************************************** -->
+      <form action="/delete" method="POST">
+        <input type="text" name="name" value="">
+        <button type="submit" class="btn btn-success" >DELETE</button>     
+        <br><br>
+      </form>
+
+<!-- *************************************** -->
+      <form action="/update" method="POST">
+        <input type="text" name="name1" value="">
+        <input type="text" name="name2" value="">
+        <button type="submit" class="btn btn-success" >UPDATE</button>     
+        <br><br>
+      </form>
+<!-- *************************************** -->
+</div>
+<!-- ***************************************  -->
+
+
+
+  <div class="col-md-8" id="test">
+  
+<!-- ========================== -->
+<div id="canvasSize">
+  <canvas id="mycanvas" width="200" height="200" ></canvas>
+</div>
+<h3>Under construction</h3>
+ <!-- ========================== -->
+
+<div id="chartContainer">
+<script type="text/javascript">
+
+/*
+$.ajax("assets/data/seaLevelD3.csv", {
+  success: function(data){
+    var csv = d3.csv.parse(data);
+    console.table(csv);
+    console.log("csv loded");
+  }
+});
+*/
+
+ var svg = dimple.newSvg("#chartContainer", 590, 400);
+    d3.csv("http://localhost:4000/assets/data/seaLevelD3.csv", function (data) {
+      console.log(data[0]);
+
+      var testData = [
+        { "time" : 0 },
+        { "time" : 1 },
+        { "time" : 2 },
+      ];
+      var myChart = new dimple.chart(svg, testData);
+      myChart.setBounds(60, 30, 510, 330)
+      myChart.addCategoryAxis("x", ["Price Tier", "Channel"]);
+      myChart.addMeasureAxis("y", "Unit Sales");
+      myChart.addSeries("Channel", dimple.plot.bar);
+      myChart.addLegend(65, 10, 510, 20, "right");
+      myChart.draw();
+    });
+
+  /* ========================== */
+/*
+var chart = new dimple.chart(svg, csv);
+chart.addCategoryAxis("x", "year");
+chart.addMeasureAxis("y", "sealevel");
+chart.addSeries(null, dimple.plot.bar);
+chart.draw();
+*/
+
+
+
+
+/*
+    var country = [];
+    var carbon = [];
+
+  {{#each avgCarbon}}
+
+    country.push('{{Country}}');
+    carbon.push({{[Carbon Footprint]}});
+  {{/each}}
+
+var ctx = document.getElementById("mycanvas").getContext('2d');
+
+var chartData = new Chart (ctx, {
+  type: 'bar',
+  data: {
+    labels: country,
+  datasets: [
+  {
+    label: 'Carbon level',
+    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#c45850"],
+    borderColor: 'rgb(255, 0, 0)',
+    hoverBackgroundColor: 'rgba(200,200,200, 1)',
+    hoverBorderColor: 'rgba(200,200,200, 1)',
+    data: carbon
+  }
+  ]
+},
+  options: {
+    title: {
+      display: true,
+      text: 'World '
+    }
+  }
+});
+*/
+</script>
+</div>
+
+  </div>
+</div>

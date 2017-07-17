@@ -23,7 +23,7 @@ app.use(methodOverride("_method"));
 var exphbs = require("express-handlebars");
 
 // Heroku will set the port via an environment variable
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 5000));
 
 // Serve static content for the app from the "public" directory
 app.use(express.static(defaultPath + "public"));

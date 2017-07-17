@@ -1,30 +1,35 @@
 
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 
-<!-- =====================================================-->
+<script type="text/javascript" src="assets/javascript/Chart.js"></script>
+<!-- ============================================ =========-->
 
 
 <div class="row">
   <div class="col-md-2" id="btnResearch">
  
-      	<form action="/barCarbon" method="POST">
+       <form action="/barCarbon" method="POST">
           
       
             <button type="submit" class="btn btn-primary btn-sm">Carbon Quantity</button>  
             <br><br>
-    	</form>
-      	<form action="/LineTempRaise" method="POST"> 
-      		
+      </form>
+        <form action="/LineTempRaise" method="POST"> 
+          
             <input type="hidden" name="two" value="">
             <button type="submit" class="btn btn-primary btn-sm">Ave TempRaise</button>  
             <br><br>
-    	</form>
+      </form>
 
-      	<form action="/pieChart" method="POST"> 
-      	
+        <form action="/pieChart" method="POST"> 
+        
             <input type="hidden" name="three" value="">
             <button type="submit" class="btn btn-primary btn-sm">Pie Chart</button>  
             <br><br>
-    	</form>
+      </form>
 
      <form action="/sealevel" method="POST"> 
           
@@ -33,12 +38,12 @@
             <br><br>
       </form>
 
-    	<form action="/D3Chart" method="POST"> 
-      		
+      <form action="/D3Chart" method="POST"> 
+          
             <input type="hidden" name="four" value="">
             <button type="submit" class="btn btn-primary btn-sm">D3-Chart Sea Level</button>  
             <br><br>
-    	</form>
+      </form>
 </div>
 
 
@@ -51,6 +56,7 @@
         <button type="submit" class="btn btn-success" >All Names:</button>     
         <br><br>
       </form>
+
 
 <!-- *************************************** -->
       <form action="/insert" method="POST">
@@ -75,15 +81,54 @@
       </form>
 <!-- *************************************** -->
 </div>
-<!-- *************************************** -->
+<!-- ***************************************  -->
 
 
 
-	<div class="col-md-8" id="test">
-	  
-<img id="map" src="assets\img\07.png" class="img-circle"  width="600" height="400">
-
-	</div>
+  <div class="col-md-8" id="test">
+  
+<!-- ========================== -->
+<div id="canvasSize">
+  <canvas id="mycanvas" width="200" height="200" ></canvas>
 </div>
+ <!-- ========================== -->
+
+<script type="text/javascript">
+    var country = [];
+    var carbon = [];
+
+  {{#each avgCarbon}}
+
+    country.push('{{Country}}');
+    carbon.push({{[Carbon Footprint]}});
+  {{/each}}
+
+var ctx = document.getElementById("mycanvas").getContext('2d');
+
+var chartData = new Chart (ctx, {
+  type: 'bar',
+  data: {
+    labels: country,
+  datasets: [
+  {
+    label: 'Carbon level',
+    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#c45850"],
+    borderColor: 'rgb(255, 0, 0)',
+    hoverBackgroundColor: 'rgba(200,200,200, 1)',
+    hoverBorderColor: 'rgba(200,200,200, 1)',
+    data: carbon
+  }
+  ]
+},
+  options: {
+    title: {
+      display: true,
+      text: 'World '
+    }
+  }
+});
+</script>
 
 
+  </div>
+</div>
