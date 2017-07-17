@@ -37,6 +37,11 @@ connection.connect(function(err) {
   console.log("connected as id " + connection.threadId);
 });
 
+setInterval(function () {
+    console.log("MySQL keep alive sent");
+    connection.query('SELECT 1');
+}, 5000);
+
 //========================================
 app.get("/", function(req, res) {
     res.render("home");
@@ -74,7 +79,7 @@ app.post("/event", function(req, res) {
       throw err;
     }
      console.log('data', data);
-      }); 
+      });
   //res.render("project-test", { dataHtml: data });
   res.render("project-test");
   });
@@ -124,7 +129,7 @@ app.post("/barCarbon", function(req, res) {
     //=================================================================
 
 app.post("/LineTempRaise", function(req, res) {
-  
+
   console.log("YOU MADE IT BUDDY!!!");
 
   connection.query("SELECT Country, `Forest Footprint`, `Fishing Water`, `Urban Land` FROM heroku_a38f73473a003db.carbonlevel WHERE Country IN ('Australia' ,'Austria' ,'Afghanistan', 'Argentina');", function(err, data) {
