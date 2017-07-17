@@ -122,15 +122,42 @@
         <input type="text" name="signinDone2" value="default 'abcd' ">
         <br><br>
         <button type="submit" class="btn btn-success btn-sm" name="signinDone3" >Signin</button>        
+             
+        <h2><span class='out'>Login via Google or Facebook</span><span class='in'>Welcome back!</span></h2>
+
         <br><br>
-</form>
+        <div class="in">
+        <span id="userName"></span>
+        <img id="userPic" src="">
+        </div>
+        <br>
+        <div class="text-center" style="margin-left: 220px;">
+        <div class="g-signin2 out signInBtn" data-onsuccess="onSignIn" onclick="onSignIn()">Sign in</div>
+        </div>
+        <br>
+        <div class="fb-login-button out signInBtn" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
+        <br>
+        <button class="btn-default in" href="#" onclick="signOut();">Sign out</button>
+        <br>
+        <br>
+
+         
+          <div class="modal-footer ">
+                <button type="button " class="modal-action modal-close " data-dismiss="modal ">Close</button>
+            </div>
+           
+            </div>
+        
+        
+
+        
+
+
             
             </div>
 
           <!-- ============================================== --> 
-            <div class="modal-footer ">
-                <button type="button " class="modal-action modal-close " data-dismiss="modal ">Close</button>
-            </div>
+           
         </div>
         </div>
 
