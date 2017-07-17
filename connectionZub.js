@@ -111,33 +111,31 @@ app.post("/location", function(req, res) {
   //=================================================================
 
 app.post("/barCarbon", function(req, res) {
-  connection.query("SELECT max(`Carbon Footprint`), Country, `Carbon Footprint` FROM heroku_a38f73473a003db.carbonlevel", function(err, data) {
+  connection.query("SELECT Country, `Carbon Footprint` FROM heroku_a38f73473a003db.carbonlevel WHERE Country IN ('Australia' ,'Austria' ,'Afghanistan', 'Argentina');", function(err, data) {
     if (err) {
       throw err;
     }
-    res.render("dataTemp", { avgCarbon: data });
+    res.render("graphBarcarbon", { avgCarbon: data });
     console.log('data', data);
-    print (data); //display json file in localhost
+
   });
 });
 
     //=================================================================
 
-app.get("/LineTempRaise", function(req, res) {
+app.post("/LineTempRaise", function(req, res) {
   
   console.log("YOU MADE IT BUDDY!!!");
 
-  connection.query("SELECT Country, `Forest Footprint`, `Fishing Water`, `Urban Land` FROM heroku_a38f73473a003db.carbonlevel LIMIT 5", function(err, data) {
+  connection.query("SELECT Country, `Forest Footprint`, `Fishing Water`, `Urban Land` FROM heroku_a38f73473a003db.carbonlevel WHERE Country IN ('Australia' ,'Austria' ,'Afghanistan', 'Argentina');", function(err, data) {
     if (err) {
       throw err;
     }
-
     // Print object as JSON to the console with some minimal formatting
-    console.log(JSON.stringify(data, null, 4));
-
+    //console.log(JSON.stringify(data, null, 4));
     //res.end();
     res.render("graphLineAveTempRaise", { tempRaise: data });
-    //console.log('data', data);
+  //  console.log('data', data);
     //print (data); //display json file in localhost
   });
 });
@@ -145,17 +143,37 @@ app.get("/LineTempRaise", function(req, res) {
     //=================================================================
 
 app.post("/pieChart", function(req, res) {
-  connection.query("SELECT Country, `Carbon Footprint` FROM heroku_a38f73473a003db.carbonlevel", function(err, data) {
+  connection.query("SELECT Country, `Carbon Footprint` FROM heroku_a38f73473a003db.carbonlevel WHERE Country IN ('Australia' ,'Austria' ,'Afghanistan', 'Argentina');", function(err, data) {
     if (err) {
       throw err;
     }
-    res.render("dataTemp", { carbon: data });
-    console.log('data', data);
-    print (data); //display json file in localhost
-  });
-
+    res.render("graphPiecarbon", { piecarbon: data });
+  //  console.log('data', data);
+});
 });
 
+//=================================================================
+
+app.post("/sealevel", function(req, res) {
+  connection.query("SELECT year, change_msl_mm FROM heroku_a38f73473a003db.mean_sea_level_change_global WHERE year IN ('1992.9595','1999.9094', '2004.1173','2008.4067', '2016.4697');", function(err, data) {
+    if (err) {
+      throw err;
+    }
+    res.render("graphSealevel", { sea: data });
+  //  console.log('data', data);
+});
+});
+    //=================================================================
+
+app.post("/D3Chart", function(req, res) {
+  connection.query("SELECT year, change_msl_mm FROM heroku_a38f73473a003db.mean_sea_level_change_global WHERE year IN ('1992.9595','1999.9094', '2004.1173','2008.4067', '2016.4697');", function(err, data) {
+    if (err) {
+      throw err;
+    }
+    res.render("graphD3", { d3: data });
+  //  console.log('data', data);
+});
+});
 //========================================
 app.listen(port, function() {
   console.log("Listening on PORT " + port);

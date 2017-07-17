@@ -5,13 +5,13 @@
   crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="assets/javascript/Chart.js"></script>
-
 <!-- ============================================ =========-->
 
 
 <div class="row">
   <div class="col-md-2" id="btnResearch">
-        <form action="/barCarbon" method="POST">
+ 
+       <form action="/barCarbon" method="POST">
           
       
             <button type="submit" class="btn btn-primary btn-sm">Carbon Quantity</button>  
@@ -50,6 +50,7 @@
 <!-- *************************************** -->
 
   <div class="col-md-2" id="btnResearch2">
+
       <form action="/allPlayers" method="POST">
         <input type="hidden" name="id" value="nameOfPlayers">
         <button type="submit" class="btn btn-success" >All Names:</button>     
@@ -70,6 +71,7 @@
         <button type="submit" class="btn btn-success" >DELETE</button>     
         <br><br>
       </form>
+
 <!-- *************************************** -->
       <form action="/update" method="POST">
         <input type="text" name="name1" value="">
@@ -83,79 +85,48 @@
 
 
 
-	<div class="col-md-8" id="test">
-	
+  <div class="col-md-8" id="test">
+  
 <!-- ========================== -->
 <div id="canvasSize">
   <canvas id="mycanvas" width="200" height="200" ></canvas>
 </div>
  <!-- ========================== -->
 
-<!-- 
-<ol>
-
-  {{#each tempRaise}}
-    <li id="climateDataDisplay">
-    <p>This: {{this}}</p>     
-    <p>Country:  {{Country}}</p> 
-    <p>Forest:  {{[Forest Footprint]}}</p>
-    <p>Water:  {{[Fishing Water]}}</p>
-    <p>Urban Land:  {{[Urban Land]}}</p>
-    </li> 
-  {{/each}}
-</ol> 
--->
- <!-- ========================== -->
-
-
 <script type="text/javascript">
     var country = [];
-    var forest = [];
-    var water = [];
-    var land = [];
+    var carbon = [];
 
-  {{#each tempRaise}}
+  {{#each avgCarbon}}
+
     country.push('{{Country}}');
-    forest.push({{[Forest Footprint]}});
-    water.push({{[Fishing Water]}});
-    land.push({{[Urban Land]}});
+    carbon.push({{[Carbon Footprint]}});
   {{/each}}
 
 var ctx = document.getElementById("mycanvas").getContext('2d');
+
 var chartData = new Chart (ctx, {
-  type: 'line',
+  type: 'bar',
   data: {
     labels: country,
-    datasets: [
-    {
-      label: 'forest',
-      background: 'rgb(255, 0, 0))',
-      borderColor: "#3e95cd",
-      hoverBackgroundColor: 'rgba(234, 33, 11, 1))',
-      hoverBorderColor: 'rgba(234, 33, 11, 1))',
-      data: forest
-    },
-   
-      {
-      label: 'water',
-      background: 'rgba(200,200,200, 0.75)',
-      borderColor: "#8e5ea2",
-      hoverBackgroundColor: 'rgba(200,200,200, 1)',
-      hoverBorderColor: 'rgba(200,200,200, 1)',
-      data: water
-    },
-    {
-      label: 'land',
-      background: 'rgba(234, 33, 11, 1)',
-      borderColor: "#c45850",
-      hoverBackgroundColor: 'rgba(234, 33, 11, 1))',
-      hoverBorderColor: 'rgba(234, 33, 11, 1))',
-      data: land
+  datasets: [
+  {
+    label: 'Carbon level',
+    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#c45850"],
+    borderColor: 'rgb(255, 0, 0)',
+    hoverBackgroundColor: 'rgba(200,200,200, 1)',
+    hoverBorderColor: 'rgba(200,200,200, 1)',
+    data: carbon
+  }
+  ]
+},
+  options: {
+    title: {
+      display: true,
+      text: 'World '
     }
-    ]
   }
 });
-
 </script>
 
 

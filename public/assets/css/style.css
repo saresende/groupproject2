@@ -1,6 +1,6 @@
 
 		body{
-			background-color: white;
+			background-color: wheat;
 		}
 		.navbar{
 			margin-top: 10px;
@@ -19,7 +19,7 @@
 		p{
 			overflow: hidden;
 			margin-top: -15px;
-			color: white;
+			color: blue;
 		}
 
 		button{
@@ -27,13 +27,21 @@
 		}
 		}
 		#btnResearch{
-			background-color: black;
+			
 		}
 		#btnResearch button{
 			width: 180px;
+			font-size: 13px;
 		}
 		#btnResearch input{
 			width: 180px;
+		}
+		#btnResearch2 button{
+			width: 90px;
+			font-size: 11px;
+		}
+		#btnResearch2 input{
+			width: 90px;
 		}
 		input{
 			width: 250px;
@@ -43,22 +51,34 @@
 			font-size: 1.5em;
 		}
 		.nav li{
-			font-size: 15px;
+			font-size: 10px;
+		}
+		.nav li button{
+			width: 80px;
 		}
 		#climateDataDisplay li{
 			font-size: 10px;
 		}
 		#video{
 			width: auto;
-			height: 300px;
+			height: 380px;
 			margin-top: -15px;
 		}
 		footer{
 			float: left;
 		}
-		#test{
+		#mycanvas{
+			margin-left: 10px;
+			width: 85%;
+
+		}
+		#canvasSize{
+			width: 50%;
 			margin-left: 60px;
 		}
 		#friendModal2{
 			background-color: wheat;
+		}
+		#map{
+			margin-left: 50px;
 		}

@@ -7,29 +7,36 @@
   <div class="col-md-2" id="btnResearch">
  
       	<form action="/barCarbon" method="POST">
-          <br> 
-            <input type="hidden" name="one" value=""><br>
-            <button type="submit" class="btn btn-primary btn-sm">carbonQuantity</button>  
+          
+      
+            <button type="submit" class="btn btn-primary btn-sm">Carbon Quantity</button>  
             <br><br>
     	</form>
       	<form action="/LineTempRaise" method="POST"> 
       		
             <input type="hidden" name="two" value="">
-            <button type="submit" class="btn btn-primary btn-sm">aveTempRaise</button>  
+            <button type="submit" class="btn btn-primary btn-sm">Ave TempRaise</button>  
             <br><br>
     	</form>
 
       	<form action="/pieChart" method="POST"> 
       	
             <input type="hidden" name="three" value="">
-            <button type="submit" class="btn btn-primary btn-sm">Sea level</button>  
+            <button type="submit" class="btn btn-primary btn-sm">Pie Chart</button>  
             <br><br>
     	</form>
 
-    	<form action="/four" method="POST"> 
+     <form action="/sealevel" method="POST"> 
+          
+            <input type="hidden" name="four" value="">
+            <button type="submit" class="btn btn-primary btn-sm">Sea Level</button>  
+            <br><br>
+      </form>
+
+    	<form action="/D3Chart" method="POST"> 
       		
             <input type="hidden" name="four" value="">
-            <button type="submit" class="btn btn-primary btn-sm">Other</button>  
+            <button type="submit" class="btn btn-primary btn-sm">D3-Chart Sea Level</button>  
             <br><br>
     	</form>
 </div>
@@ -37,19 +44,13 @@
 
 <!-- *************************************** -->
 
-  <div class="col-md-2" id="btnResearch">
+  <div class="col-md-2" id="btnResearch2">
 
       <form action="/allPlayers" method="POST">
         <input type="hidden" name="id" value="nameOfPlayers">
         <button type="submit" class="btn btn-success" >All Names:</button>     
         <br><br>
       </form>
-
-<!-- *************************************** -->
-
-<!-- *************************************** -->
-
-<!-- *************************************** -->
 
 <!-- *************************************** -->
       <form action="/insert" method="POST">
@@ -79,19 +80,9 @@
 
 
 	<div class="col-md-8" id="test">
-	<br><br><br><br><h1>Test</h1>   
+	  
+<img id="map" src="assets\img\07.png" class="img-circle"  width="600" height="400">
 
-<ol>
-  {{#each list}}
-    <li id="climateDataDisplay">     
-    <p>Organizer:  {{this.organizer}}</p> 
-    <p>Media:  {{this.Media}}</p>
-    <p>Description:  {{this.description}}</p> 
-    <p>Date:  {{this.date}}</p>  
-     <p>Location:  {{this.location}}</p>   
-    </li>
-  {{/each}}
-</ol>    
 	</div>
 </div>
 
