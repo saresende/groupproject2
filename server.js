@@ -10,16 +10,6 @@ var models = require("./models/model.js");
 // Initialize the data models
 models.initializeModels();
 
-// Test getting data from the databse
-/*
-models.MeanSeaLevelChange.findAndCountAll().then(result => {
-    console.log("Count of returned rows: " + result.count);
-    result.rows.forEach( function(row) {
-        console.log(`${row.id}   ${row.year}   ${row.change}`);
-    });
-});
-*/
-
 // The default file path to the application
 var defaultPath = path.join(__dirname, '/');
 
@@ -55,6 +45,28 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.get("/", function(request, response) {
     var fullUrl = request.protocol + '://' + request.get('host') + request.originalUrl;
     response.send("Received request for URL: " + fullUrl);
+});
+
+// This a temporary path to a test chart
+app.get("/chart", function(request, response) {
+    var fullUrl = request.protocol + '://' + request.get('host') + request.originalUrl;
+
+    // Test getting data from the databse
+    models.MeanSeaLevelChange.findAndCountAll().then(result => {
+
+        console.log("Count of returned rows: " + result.count);
+
+        var data = [];
+
+        result.rows.forEach( function(row) {
+            data.push([row.year, row.change]);
+        });
+
+        //console.log(data);
+
+        response.render("climateChangeChart", { climateData : data });
+    });
+
 });
 
 // Finally, configure a catch all for baloney http requests
