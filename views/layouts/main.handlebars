@@ -2,10 +2,29 @@
 <html>
 <head>
 	<meta charset="utf-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Climate change</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-signin-client_id" content="520273713084-3nf5h5gnn1dqmljom2n2p0onrjlhkh27.apps.googleusercontent.com">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://apis.google.com/js/plus.js?onload=init"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
 	<title>Climate Now!!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
+
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -27,6 +46,86 @@
 </head>
 <body>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=2469561986517847";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  console.log('logged');
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="container">
+
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+ 
+    </div>
+    <ul class="nav navbar-nav">
+  <li>
+  <form action="/" method="GET"> 
+        <input type="hidden" name="home" value="">
+        <button type="submit" class="btn btn-primary btn-sm" >Home</button>        
+        <br><br>
+</form>
+</li>
+ <li>
+  <form action="/contact" method="POST"> 
+        <input type="hidden" name="contact" value="">
+        <button type="submit" class="btn btn-primary btn-sm">Research</button>        
+        <br><br>
+</form>
+</li>
+ <li>
+  <form action="/zubaer" method="POST"> 
+        <input type="hidden" name="resurch" value="">
+        <button type="submit" class="btn btn-primary btn-sm" >Events</button>        
+        <br><br>
+</form>
+</li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+<li>
+  <form action="/signup" method="POST"> 
+        <input type="hidden" name="signup" value="">
+        <button type="submit" class="btn btn-success btn-sm" >Create Event</button>        
+        <br><br>
+</form>
+</li>
+<li>
+<form action="/signup2" method="POST"> 
+        <input type="hidden" name="signin" value="">
+        <button type="submit" class="btn btn-success btn-sm" >Signup</button>        
+        <br><br>
+</form>
+  
+</li>
+<li>
+  <form action="/signin" method="POST"> 
+        <input type="hidden" name="signin" value="">
+        <button type="submit" class="btn btn-success btn-sm" >Profile</button>        
+        <br><br>
+</form>
+</li>
+    </ul>      
+    <img src="assets\img\03.jpg" class="img-circle"  width="60" height="60">
+
+    <p class="navbar-text">CLIMATENOW!!!</p>
+  </div>
+</nav>
+
+<!-- =====================================================-->
+
+
+
+
+
+
 <div class="container">
 
   {{> navbar }}
@@ -38,4 +137,6 @@
 </div>
 
 </body>
-</html>
+<script type="text/javascript" src="assets/javascript/authenticate.js"></script>
+<script type="text/javascript" src="assets/javascript/d3.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script></html>

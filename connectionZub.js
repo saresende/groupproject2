@@ -4,7 +4,7 @@ var mysql = require("mysql");
 var exphbs = require("express-handlebars");
 
 var app = express();
-var port = 4000;
+var port = 3000;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
